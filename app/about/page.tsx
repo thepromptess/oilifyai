@@ -73,14 +73,20 @@ export default function AboutPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="section-label mb-4">Our Story</p>
-            <h1 className="text-5xl lg:text-6xl font-black text-white tracking-tight mb-6">
-              Built by Guyanese.<br />
-              <span className="text-[#f97316]">Built for the World.</span>
+            <h1 className="text-5xl lg:text-6xl font-black text-white tracking-tight mb-4">
+              From the Diaspora.<br />
+              <span className="text-[#f97316]">For the Homeland.</span>
             </h1>
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#f97316]/10 border border-[#f97316]/25 mb-5">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#f97316]" />
+              <span className="text-[#f97316] text-xs font-bold uppercase tracking-widest">100% Guyanese Owned</span>
+              <span className="text-[#f97316]/50 text-xs font-bold">|</span>
+              <span className="text-[#f97316] text-xs font-bold uppercase tracking-widest">Diaspora Led</span>
+            </div>
             <p className="text-[#94a3b8] text-lg leading-relaxed">
-              OilifyAI is the technology story Guyana&apos;s oil boom deserved. We&apos;re not an import —
-              we are the product of Guyanese intellect, Guyanese ambition, and an unwavering belief that the
-              nation at the center of the world&apos;s most exciting energy frontier should own its intelligence layer.
+              OilifyAI was born from the belief that Guyana&apos;s greatest export isn&apos;t oil — it&apos;s the ingenuity
+              of its people. A Guyanese founder based in New York built this company to bridge technology and
+              heritage, channeling global expertise into local careers and lasting economic sovereignty.
             </p>
           </div>
         </div>
@@ -100,36 +106,48 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Origin Story */}
+      {/* Founder Story */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="section-label mb-4">The Origin</p>
+              <p className="section-label mb-4">The Founder</p>
               <h2 className="text-4xl font-black text-[#0b1f3a] tracking-tight mb-6">
-                A Nation Booming.<br />A Technology Gap to Fill.
+                From New York.<br />
+                <span className="text-[#f97316]">Rooted in Georgetown.</span>
               </h2>
               <div className="space-y-4 text-[#475569] leading-relaxed">
                 <p>
-                  When ExxonMobil announced the Stabroek Block discovery in 2015, Guyana instantly became
-                  the world&apos;s hottest oil province. By 2020, production was ramping and international operators
-                  were pouring billions into the country — but their AI and analytics stacks came with them from Houston, London, and Amsterdam.
+                  OilifyAI was founded by a Guyanese entrepreneur who grew up watching the country&apos;s oil
+                  potential go untapped — not for lack of resources, but for lack of technology that understood
+                  the local context. He moved to New York to study data science and machine learning, earning
+                  his place in the competitive U.S. tech scene.
                 </p>
                 <p>
-                  Three Guyanese engineers saw a gap and a responsibility. If the country was going to earn from its
-                  natural resources, it should also earn from the technology that manages them. OilifyAI was incorporated
-                  in Georgetown in December 2020 with one mission: build world-class AI for the energy sector, in Guyana, by Guyanese.
+                  But Guyana never left him. When ExxonMobil confirmed the Stabroek Block as one of the
+                  world&apos;s largest deepwater discoveries, he saw a window — and a duty. The diaspora had
+                  the skills. The homeland had the opportunity. The question was who would build the bridge.
                 </p>
                 <p>
-                  Today we work with operators across the Stabroek Block, the Berbice Basin, and internationally.
-                  Every engineer on our team holds a Guyanese passport. Every office is in Georgetown. Every dollar reinvested is in Guyana.
+                  He returned with a mission: to build the intelligence layer for Guyana&apos;s energy boom from
+                  the inside, by people who understood both Silicon Valley-class AI and the realities on the
+                  ground in Georgetown, Linden, and New Amsterdam. OilifyAI is that bridge — Guyanese at its
+                  core, globally competitive by design, and wholly committed to growing the local workforce.
                 </p>
               </div>
-              <div className="flex items-center gap-3 mt-6 p-4 rounded-xl bg-[#f97316]/8 border border-[#f97316]/20">
-                <span className="text-3xl">🇬🇾</span>
-                <div>
-                  <div className="text-[#0b1f3a] font-bold text-sm">100% Guyanese-Owned</div>
-                  <div className="text-[#64748b] text-xs">No foreign equity. No external control. Our future is Guyana&apos;s future.</div>
+
+              <div className="flex items-center gap-4 mt-8 p-5 rounded-2xl bg-[#0b1f3a] relative overflow-hidden">
+                <div className="absolute inset-0 industrial-grid opacity-30" />
+                <div className="relative z-10 flex items-center gap-4 w-full">
+                  <div className="shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-[#f97316] to-[#ea580c] flex items-center justify-center text-white font-black text-xl">
+                    DP
+                  </div>
+                  <div>
+                    <div className="text-white font-bold">Devraj Persaud</div>
+                    <div className="text-[#f97316] text-xs font-semibold">Founder & CEO · New York / Georgetown</div>
+                    <div className="text-[#94a3b8] text-xs mt-0.5">MSc AI, Columbia University · BSc CS, University of Guyana</div>
+                  </div>
+                  <span className="ml-auto text-3xl">🇬🇾</span>
                 </div>
               </div>
             </div>
@@ -140,20 +158,34 @@ export default function AboutPage() {
                 <div className="absolute inset-0 industrial-grid opacity-60" />
                 <div className="absolute top-0 right-0 w-48 h-48 bg-[#f97316]/15 rounded-full blur-2xl" />
                 <div className="relative z-10">
-                  <div className="text-6xl mb-4">⛽</div>
+                  {/* NYC + Georgetown bridge visual */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="text-center">
+                      <div className="text-3xl mb-1">🗽</div>
+                      <div className="text-[#94a3b8] text-xs font-semibold">New York</div>
+                    </div>
+                    <div className="flex-1 mx-4 flex items-center">
+                      <div className="flex-1 h-px bg-gradient-to-r from-[#475569] via-[#f97316] to-[#475569]" />
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl mb-1">🇬🇾</div>
+                      <div className="text-[#94a3b8] text-xs font-semibold">Georgetown</div>
+                    </div>
+                  </div>
+
                   <blockquote className="text-white text-xl font-bold leading-snug mb-4">
-                    &ldquo;Guyana produces the oil. Guyana should also build the intelligence that runs it.&rdquo;
+                    &ldquo;The diaspora&apos;s greatest gift to Guyana isn&apos;t money sent home — it&apos;s knowledge brought home.&rdquo;
                   </blockquote>
                   <cite className="text-[#f97316] text-sm font-semibold not-italic">
-                    — Devraj Persaud, CEO
+                    — Devraj Persaud, Founder & CEO
                   </cite>
 
                   <div className="mt-8 grid grid-cols-2 gap-3">
                     {[
-                      { label: 'Founded', value: 'Dec 2020' },
+                      { label: 'Based In', value: 'New York, USA' },
                       { label: 'HQ', value: 'Georgetown, GY' },
-                      { label: 'Team', value: '25+ engineers' },
-                      { label: 'Ownership', value: '100% GY' },
+                      { label: 'Team', value: '25+ local hires' },
+                      { label: 'Ownership', value: '100% Guyanese' },
                     ].map(({ label, value }) => (
                       <div key={label} className="bg-white/5 rounded-lg px-3 py-2.5">
                         <div className="text-[#64748b] text-xs">{label}</div>
@@ -161,6 +193,15 @@ export default function AboutPage() {
                       </div>
                     ))}
                   </div>
+                </div>
+              </div>
+
+              {/* Diaspora badge */}
+              <div className="mt-4 p-4 rounded-xl bg-[#f97316]/8 border border-[#f97316]/20 flex items-center gap-3">
+                <span className="text-2xl">✈️</span>
+                <div>
+                  <div className="text-[#0b1f3a] font-bold text-sm">Diaspora Led · Homeland Focused</div>
+                  <div className="text-[#64748b] text-xs">Global expertise. Local commitment. Every hire is a Guyanese hire.</div>
                 </div>
               </div>
             </div>

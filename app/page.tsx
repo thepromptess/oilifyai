@@ -1,8 +1,11 @@
+'use client';
+
 import Link from 'next/link';
+import { useState, FormEvent } from 'react';
 import {
   ChevronRight, BarChart3, Brain, ShieldCheck,
-  TrendingUp, Globe2, Award, ArrowRight,
-  Zap, Users, CheckCircle2
+  Globe2, Award, ArrowRight,
+  Zap, Users, CheckCircle2, Smartphone, Bell
 } from 'lucide-react';
 
 const stats = [
@@ -56,19 +59,22 @@ export default function HomePage() {
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#f97316] to-transparent opacity-50" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32 text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f97316]/10 border border-[#f97316]/25 mb-8">
+          {/* Trust bar */}
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-[#f97316]/10 border border-[#f97316]/25 mb-8">
             <div className="w-2 h-2 rounded-full bg-[#f97316] animate-pulse-glow" />
             <span className="text-[#f97316] text-xs font-bold uppercase tracking-widest">
-              100% Guyanese-Owned · Est. Georgetown, GY
+              100% Guyanese Owned
+            </span>
+            <span className="text-[#f97316]/50 text-xs font-bold">|</span>
+            <span className="text-[#f97316] text-xs font-bold uppercase tracking-widest">
+              Diaspora Led
             </span>
           </div>
 
           {/* Headline */}
           <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black text-white leading-[0.95] tracking-tight mb-6">
-            AI Built for<br />
-            <span className="text-[#f97316]">Energy.</span>{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#94a3b8]">Built in Guyana.</span>
+            Intelligence for the<br />
+            <span className="text-[#f97316]">Stabroek Block.</span>
           </h1>
 
           <p className="text-lg sm:text-xl text-[#94a3b8] max-w-2xl mx-auto leading-relaxed mb-10">
@@ -198,6 +204,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── OILIFY APP WAITLIST ── */}
+      <OilifyAppWaitlist />
+
       {/* ── CTA BANNER ── */}
       <section className="py-20 bg-gradient-to-r from-[#0b1f3a] via-[#122a4d] to-[#0b1f3a]">
         <div className="max-w-4xl mx-auto px-6 text-center">
@@ -222,5 +231,83 @@ export default function HomePage() {
         </div>
       </section>
     </>
+  );
+}
+
+function OilifyAppWaitlist() {
+  const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    if (email) setSubmitted(true);
+  };
+
+  return (
+    <section className="py-24 bg-white relative overflow-hidden">
+      {/* Background accent */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#f8fafc] to-white" />
+      <div className="absolute right-0 top-0 w-[500px] h-[500px] bg-[#f97316]/5 rounded-full blur-3xl -translate-y-1/4 translate-x-1/4 pointer-events-none" />
+
+      <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        {/* App icon badge */}
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-[#f97316] to-[#ea580c] shadow-lg shadow-orange-500/30 mb-6">
+          <Smartphone className="w-8 h-8 text-white" />
+        </div>
+
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f97316]/10 border border-[#f97316]/20 mb-5">
+          <Bell className="w-3 h-3 text-[#f97316]" />
+          <span className="text-[#f97316] text-xs font-bold uppercase tracking-widest">Coming Soon</span>
+        </div>
+
+        <h2 className="text-4xl lg:text-5xl font-black text-[#0b1f3a] tracking-tight mb-4">
+          The Oilify App is on<br />
+          <span className="text-[#f97316]">its way.</span>
+        </h2>
+
+        <p className="text-[#64748b] text-lg leading-relaxed max-w-xl mx-auto mb-10">
+          A mobile-first intelligence platform for Guyana&apos;s energy workforce — real-time field data,
+          AI alerts, compliance checklists, and logistics tracking in your pocket. Be first in line.
+        </p>
+
+        {/* Feature pills */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {['Field Monitoring', 'AI Alerts', 'Compliance Checklists', 'Logistics Tracking', 'Offline Mode'].map((f) => (
+            <span key={f} className="px-3 py-1.5 rounded-full bg-[#0b1f3a]/5 border border-[#0b1f3a]/10 text-[#0b1f3a] text-xs font-semibold">
+              {f}
+            </span>
+          ))}
+        </div>
+
+        {submitted ? (
+          <div className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-[#f97316]/10 border border-[#f97316]/25">
+            <CheckCircle2 className="w-5 h-5 text-[#f97316]" />
+            <div className="text-left">
+              <div className="text-[#0b1f3a] font-bold text-sm">You&apos;re on the list!</div>
+              <div className="text-[#64748b] text-xs">We&apos;ll notify you the moment the Oilify App launches.</div>
+            </div>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your work email"
+              className="flex-1 px-5 py-3.5 rounded-xl border-2 border-[#e2e8f0] text-[#1e293b] text-sm placeholder-[#94a3b8] focus:border-[#f97316] transition-colors"
+            />
+            <button
+              type="submit"
+              className="btn-primary px-6 py-3.5 rounded-xl text-sm font-semibold whitespace-nowrap flex items-center justify-center gap-2"
+            >
+              Join Waitlist <ArrowRight className="w-4 h-4" />
+            </button>
+          </form>
+        )}
+
+        <p className="text-[#94a3b8] text-xs mt-4">No spam. Early access for Guyanese energy professionals.</p>
+      </div>
+    </section>
   );
 }

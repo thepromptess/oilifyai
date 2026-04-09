@@ -9,12 +9,13 @@ import {
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
 
-const interests = [
+const inquiryTypes = [
+  'AI Training',
+  'Compliance Consulting',
   'Predictive Logistics',
-  'AI Training & Development',
-  'Compliance & Reporting',
   'Pipeline Integrity AI',
   'Production Optimization',
+  'Oilify App Waitlist',
   'General Inquiry',
 ];
 
@@ -243,20 +244,21 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    {/* Interest */}
+                    {/* Inquiry Type */}
                     <div>
                       <label className="block text-sm font-semibold text-[#374151] mb-1.5" htmlFor="interest">
-                        Area of Interest
+                        Inquiry Type <span className="text-[#f97316]">*</span>
                       </label>
                       <select
                         id="interest"
                         name="interest"
+                        required
                         value={form.interest}
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] text-[#1e293b] text-sm transition-colors bg-white appearance-none cursor-pointer"
                       >
-                        <option value="">Select a service...</option>
-                        {interests.map((item) => (
+                        <option value="">Select inquiry type...</option>
+                        {inquiryTypes.map((item) => (
                           <option key={item} value={item}>{item}</option>
                         ))}
                       </select>

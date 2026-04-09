@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Cpu, MapPin, Mail, Phone, Link2, X, ArrowUpRight } from 'lucide-react';
+import { Cpu, MapPin, Mail, Phone, Globe, Link2, X, ArrowUpRight } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -91,6 +91,12 @@ export default function Footer() {
                   +1 (592) 555-1234
                 </a>
               </li>
+              <li className="flex items-center gap-3">
+                <Globe className="w-4 h-4 text-[#f97316] shrink-0" />
+                <a href="https://oilifyai.com" className="text-[#64748b] text-sm hover:text-[#f97316] transition-colors">
+                  oilifyai.com
+                </a>
+              </li>
             </ul>
             <div className="flex items-center gap-3 mt-5">
               <a
@@ -114,7 +120,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[#475569] text-sm">
-            © {new Date().getFullYear()} OilifyAI Ltd. All rights reserved.
+            © {new Date().getFullYear()} OilifyAI Ltd. · <a href="https://oilifyai.com" className="hover:text-[#f97316] transition-colors">oilifyai.com</a> · All rights reserved.
           </p>
           <div className="flex items-center gap-2">
             <span className="text-[#475569] text-xs">🇬🇾</span>
