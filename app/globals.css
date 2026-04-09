@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #1e293b;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.industrial-grid {
+  background-image:
+    linear-gradient(rgba(249, 115, 22, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249, 115, 22, 0.07) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-gradient {
+  background: radial-gradient(ellipse at 30% 50%, rgba(34, 66, 115, 0.4) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 20%, rgba(249, 115, 22, 0.12) 0%, transparent 50%),
+              linear-gradient(160deg, #060e1a 0%, #0b1f3a 40%, #0d2347 100%);
+}
+
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(11, 31, 58, 0.18), 0 0 0 1px rgba(249, 115, 22, 0.2);
+}
+
+.orange-glow {
+  box-shadow: 0 0 32px rgba(249, 115, 22, 0.35);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: all 0.2s ease;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #fb923c, #f97316);
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border: 2px solid rgba(249, 115, 22, 0.6);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: all 0.2s ease;
+}
+.btn-outline:hover {
+  border-color: #f97316;
+  background: rgba(249, 115, 22, 0.1);
+  transform: translateY(-1px);
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #f97316;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #f97316;
+}
+
+.guyana-flag-stripe {
+  background: linear-gradient(90deg, #009e60, #fcd116, #ce1126, #000000, #ffffff);
+  height: 4px;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
