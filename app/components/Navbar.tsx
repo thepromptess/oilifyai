@@ -6,10 +6,12 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, Cpu } from 'lucide-react';
 
 const navLinks = [
+  { label: 'About', href: '/about' },
   { label: 'How It Works', href: '/#how-it-works' },
   { label: "Who It's For", href: '/#who-its-for' },
   { label: 'Features', href: '/#features' },
-  { label: 'About', href: '/about' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Team', href: '/team' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -36,9 +38,9 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-18 py-4">
+      <nav className="max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between h-18 py-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group shrink-0">
+        <Link href="/" className="flex items-center gap-2 group shrink-0">
           <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#f97316] to-[#ea580c] flex items-center justify-center orange-glow group-hover:scale-105 transition-transform">
             <Cpu className="w-5 h-5 text-white" />
           </div>
@@ -53,7 +55,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-6">
           {navLinks.map(({ label, href }) => {
             const isActive = href.startsWith('/') && !href.includes('#') && pathname === href;
             return (
@@ -78,10 +80,10 @@ export default function Navbar() {
         </div>
 
         {/* CTA */}
-        <div className="hidden lg:flex items-center">
+        <div className="hidden lg:flex items-center shrink-0">
           <Link
             href="/#waitlist"
-            className="btn-primary px-5 py-2.5 rounded-lg text-sm whitespace-nowrap"
+            className="btn-primary px-4 py-2.5 rounded-lg text-sm whitespace-nowrap"
           >
             Join the Waitlist
           </Link>
@@ -100,7 +102,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ${
-          open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          open ? 'max-h-[32rem] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <div className="bg-[#060e1a]/98 backdrop-blur-md border-t border-white/10 px-6 py-4 flex flex-col gap-1">

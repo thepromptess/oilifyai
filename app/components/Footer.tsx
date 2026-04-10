@@ -3,10 +3,12 @@ import { Cpu, Globe, Mail, MapPin, ArrowUpRight } from 'lucide-react';
 import FooterNewsletter from './FooterNewsletter';
 
 const navLinks = [
+  { label: 'About', href: '/about' },
   { label: 'How It Works', href: '/#how-it-works' },
   { label: "Who It's For", href: '/#who-its-for' },
   { label: 'Features', href: '/#features' },
-  { label: 'About', href: '/about' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Team', href: '/team' },
   { label: 'Contact', href: '/contact' },
   { label: 'Join the Waitlist', href: '/#waitlist' },
 ];
