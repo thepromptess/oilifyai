@@ -3,63 +3,107 @@
 import Link from 'next/link';
 import { useState, FormEvent } from 'react';
 import {
-  ChevronRight, BarChart3, Brain, ShieldCheck,
-  Globe2, Award, ArrowRight,
-  Zap, Users, CheckCircle2, Smartphone, Bell
+  ArrowRight, CheckCircle2, ShieldCheck, Bell,
+  FileText, Users, Building2, UserCheck,
+  Smartphone, Search, AlertCircle, ClipboardList,
+  ChevronDown
 } from 'lucide-react';
 
-const stats = [
-  { value: '94%', label: 'Prediction Accuracy' },
-  { value: '3×', label: 'Faster Compliance' },
-  { value: '60+', label: 'Industry Partners' },
-  { value: '100%', label: 'Guyanese-Owned' },
-];
-
-const services = [
+// ─── HOW IT WORKS ──────────────────────────────────────────────────────────
+const steps = [
   {
-    icon: BarChart3,
-    title: 'Predictive Logistics',
-    desc: 'AI-driven supply chain forecasting that slashes downtime and optimizes field operations from rig to refinery.',
-    href: '/services#logistics',
+    number: '01',
+    title: 'Create Your Profile',
+    desc: 'Sign up as a Business, Individual, or Corporation. Oilify AI maps you to the correct Local Content Act requirements automatically.',
   },
   {
-    icon: Brain,
-    title: 'AI Training',
-    desc: 'Custom machine learning models built by Guyanese engineers — domain-specific, production-ready, and locally supported.',
-    href: '/services#training',
+    number: '02',
+    title: 'Get Compliance-Ready',
+    desc: 'We guide you through every document, certification, and registration needed to meet Guyana\'s Local Content Act — step by step.',
+  },
+  {
+    number: '03',
+    title: 'Submit to the Portal',
+    desc: 'We prepare your complete submission package so you walk into the government portal ready. No surprises, no rejections.',
+  },
+  {
+    number: '04',
+    title: 'Stay Certified & Alert',
+    desc: 'Oilify AI monitors your status, sends renewal reminders, and alerts you the moment new procurement opportunities open.',
+  },
+];
+
+// ─── WHO IT'S FOR ───────────────────────────────────────────────────────────
+const audiences = [
+  {
+    icon: Building2,
+    title: 'Businesses',
+    subtitle: 'Local suppliers & service companies',
+    desc: 'Whether you\'re a catering company, equipment supplier, or logistics firm — if you want to work in Guyana\'s petroleum sector, Local Content registration is the door. We help you open it.',
+    tags: ['Supplier Registration', 'Capacity Documentation', 'Procurement Alerts'],
+  },
+  {
+    icon: UserCheck,
+    title: 'Individuals',
+    subtitle: 'Guyanese workers & professionals',
+    desc: 'Skilled Guyanese workers need to be on the Local Content register to be considered for roles with operators and contractors. We make sure your profile is complete and visible.',
+    tags: ['Skills Certification', 'Registry Listing', 'Job Opportunity Alerts'],
+  },
+  {
+    icon: Users,
+    title: 'Corporations',
+    subtitle: 'Operators, contractors & multinationals',
+    desc: 'International companies operating in Guyana\'s petroleum sector must meet Local Content spending and hiring thresholds. Oilify AI tracks your obligations and keeps you in good standing.',
+    tags: ['Spend Tracking', 'Reporting Automation', 'Compliance Dashboards'],
+  },
+];
+
+// ─── FEATURES ──────────────────────────────────────────────────────────────
+const features = [
+  {
+    icon: ClipboardList,
+    title: 'Guided Compliance Checklists',
+    desc: 'Dynamic, role-specific checklists that adapt to your entity type and track every requirement of the Local Content Act.',
+  },
+  {
+    icon: FileText,
+    title: 'Portal Submission Prep',
+    desc: 'We format and package your documents exactly as the government portal expects — eliminating rejections before they happen.',
   },
   {
     icon: ShieldCheck,
-    title: 'Compliance & Reporting',
-    desc: 'Automated regulatory compliance with real-time dashboards aligned to EPA, GEMA, and international energy standards.',
-    href: '/services#compliance',
+    title: 'Certification Management',
+    desc: 'Track expiry dates, receive renewal reminders, and maintain a complete audit trail of every certification you hold.',
   },
-];
-
-const whyUs = [
-  { icon: Globe2, title: 'Local Expertise', desc: 'Deep knowledge of Guyana\'s regulatory environment, geology, and energy landscape.' },
-  { icon: Zap, title: 'Real-Time Intelligence', desc: 'Sub-second inference pipelines that process sensor streams from thousands of field endpoints.' },
-  { icon: Users, title: 'Guyanese Talent', desc: 'Our entire team is recruited, trained, and based in Guyana — creating local tech careers.' },
-  { icon: Award, title: 'Industry Certified', desc: 'ISO 27001, SOC 2 Type II, and GEMA-compliant. Security and compliance by design.' },
+  {
+    icon: Search,
+    title: 'Procurement Opportunity Alerts',
+    desc: 'Get notified the moment relevant tenders, contracts, or hiring opportunities open in the sector — matched to your profile.',
+  },
+  {
+    icon: Bell,
+    title: 'Real-Time Status Notifications',
+    desc: 'Instant alerts on registration status changes, government updates, and any new Local Content Act requirements that affect you.',
+  },
+  {
+    icon: Smartphone,
+    title: 'Mobile-First Design',
+    desc: 'Built for the field and the office. Everything you need to stay compliant is accessible from your phone, anywhere in Guyana.',
+  },
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* ── HERO ── */}
+      {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
-        {/* Industrial grid overlay */}
         <div className="absolute inset-0 industrial-grid opacity-70" />
-
-        {/* Decorative circles */}
         <div className="absolute top-1/4 right-0 w-[600px] h-[600px] rounded-full bg-[#f97316]/5 blur-3xl -translate-y-1/4 translate-x-1/3 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#0b1f3a]/80 blur-3xl pointer-events-none" />
-
-        {/* Orange vertical accent line */}
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#f97316] to-transparent opacity-50" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32 text-center">
-          {/* Trust bar */}
+        <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 py-36 text-center">
+          {/* Trust badge */}
           <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-[#f97316]/10 border border-[#f97316]/25 mb-8">
             <div className="w-2 h-2 rounded-full bg-[#f97316] animate-pulse-glow" />
             <span className="text-[#f97316] text-xs font-bold uppercase tracking-widest">
@@ -72,36 +116,39 @@ export default function HomePage() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black text-white leading-[0.95] tracking-tight mb-6">
-            Intelligence for the<br />
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[0.95] tracking-tight mb-4">
+            Your Digital Keys to the<br />
             <span className="text-[#f97316]">Stabroek Block.</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-[#94a3b8] max-w-2xl mx-auto leading-relaxed mb-10">
-            OilifyAI powers the next generation of oil & gas operations with predictive intelligence,
-            compliance automation, and locally-trained AI models — engineered at the heart of the Stabroek Block.
+          {/* Tagline */}
+          <p className="text-xl sm:text-2xl font-semibold text-white/80 mb-5 tracking-wide">
+            Local Content compliance. Automated.
+          </p>
+
+          {/* Subheadline */}
+          <p className="text-base sm:text-lg text-[#94a3b8] max-w-2xl mx-auto leading-relaxed mb-10">
+            Oilify AI is the compliance app built for Guyanese businesses, workers, and corporations
+            navigating the Local Content Act. We prepare you for the government portal. We keep you
+            certified. We alert you when opportunities open.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Link href="/services" className="btn-primary px-8 py-4 rounded-xl text-base flex items-center gap-2 group">
-              Explore Services
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/#waitlist"
+              className="btn-primary px-8 py-4 rounded-xl text-base flex items-center gap-2 group"
+            >
+              Join the Early Access Waitlist
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link href="/contact" className="btn-outline px-8 py-4 rounded-xl text-base flex items-center gap-2">
-              Schedule a Demo
-              <ChevronRight className="w-4 h-4" />
+            <Link
+              href="/#how-it-works"
+              className="btn-outline px-8 py-4 rounded-xl text-base flex items-center gap-2"
+            >
+              See How It Works
+              <ChevronDown className="w-4 h-4" />
             </Link>
-          </div>
-
-          {/* Stats row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden max-w-3xl mx-auto">
-            {stats.map(({ value, label }) => (
-              <div key={label} className="bg-[#0b1f3a]/80 backdrop-blur-sm px-6 py-5">
-                <div className="text-3xl font-black text-[#f97316]">{value}</div>
-                <div className="text-xs text-[#94a3b8] mt-1 font-medium">{label}</div>
-              </div>
-            ))}
           </div>
         </div>
 
@@ -112,91 +159,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── SERVICES OVERVIEW ── */}
-      <section className="py-24 bg-white">
+      {/* ── HOW IT WORKS ─────────────────────────────────────────────────── */}
+      <section id="how-it-works" className="py-24 bg-white scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="section-label justify-center mb-3">What We Do</p>
+            <p className="section-label justify-center mb-3">How It Works</p>
             <h2 className="text-4xl lg:text-5xl font-black text-[#0b1f3a] tracking-tight">
-              Industrial AI,<br />Purpose-Built
+              Compliance made<br />simple. Step by step.
             </h2>
             <p className="text-[#64748b] mt-4 max-w-xl mx-auto">
-              Three core services, one mission: equip Guyana&apos;s energy sector with the most advanced AI stack on the planet.
+              From first sign-up to certified status — Oilify AI walks you through every stage
+              of Local Content compliance so nothing falls through the cracks.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {services.map(({ icon: Icon, title, desc, href }) => (
-              <Link
-                key={title}
-                href={href}
-                className="group card-hover rounded-2xl border border-[#e2e8f0] bg-white p-8 flex flex-col"
-              >
-                <div className="w-12 h-12 rounded-xl bg-[#f97316]/10 flex items-center justify-center mb-5 group-hover:bg-[#f97316]/20 transition-colors">
-                  <Icon className="w-6 h-6 text-[#f97316]" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+            {/* Connector line (desktop) */}
+            <div className="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-[#f97316]/30 to-transparent" />
+
+            {steps.map(({ number, title, desc }) => (
+              <div key={number} className="relative bg-[#f8fafc] rounded-2xl p-7 border border-[#e2e8f0] card-hover">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#f97316] to-[#ea580c] flex items-center justify-center mb-5 shadow-md shadow-orange-500/20">
+                  <span className="text-white font-black text-sm">{number}</span>
                 </div>
-                <h3 className="text-xl font-bold text-[#0b1f3a] mb-3">{title}</h3>
-                <p className="text-[#64748b] text-sm leading-relaxed flex-1">{desc}</p>
-                <div className="flex items-center gap-1.5 mt-5 text-[#f97316] text-sm font-semibold group-hover:gap-3 transition-all">
-                  Learn more <ArrowRight className="w-4 h-4" />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── GUYANA HERITAGE BANNER ── */}
-      <section className="py-20 bg-[#0b1f3a] relative overflow-hidden">
-        <div className="absolute inset-0 industrial-grid opacity-40" />
-        <div className="absolute right-0 top-0 w-96 h-96 bg-[#f97316]/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center gap-10">
-            {/* Flag & origin */}
-            <div className="shrink-0 flex flex-col items-center gap-3">
-              <div className="text-7xl">🇬🇾</div>
-              <div className="text-[#94a3b8] text-xs uppercase tracking-widest font-semibold text-center">
-                Georgetown, Guyana
-              </div>
-            </div>
-
-            <div className="lg:border-l border-white/15 lg:pl-10">
-              <p className="section-label mb-3">Our Heritage</p>
-              <h2 className="text-3xl lg:text-4xl font-black text-white mb-4">
-                From the Stabroek Block to<br />
-                <span className="text-[#f97316]">Silicon Valley-Class AI</span>
-              </h2>
-              <p className="text-[#94a3b8] leading-relaxed max-w-2xl">
-                As Guyana emerges as one of the world&apos;s fastest-growing oil producers, OilifyAI stands as
-                the country&apos;s flagship technology answer. We were founded by Guyanese engineers and data
-                scientists who believe that the nation that powers the world should also build the intelligence
-                that runs it — 100% locally owned, locally operated, and globally competitive.
-              </p>
-              <Link href="/about" className="btn-primary mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm">
-                Our Full Story <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── WHY OILIFY AI ── */}
-      <section className="py-24 bg-[#f8fafc]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="section-label justify-center mb-3">Why OilifyAI</p>
-            <h2 className="text-4xl lg:text-5xl font-black text-[#0b1f3a] tracking-tight">
-              The Competitive Edge
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyUs.map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="bg-white rounded-2xl p-7 border border-[#e2e8f0] card-hover">
-                <div className="w-11 h-11 rounded-xl bg-[#0b1f3a] flex items-center justify-center mb-4">
-                  <Icon className="w-5 h-5 text-[#f97316]" />
-                </div>
-                <h3 className="font-bold text-[#0b1f3a] mb-2">{title}</h3>
+                <h3 className="text-[#0b1f3a] font-bold text-lg mb-3">{title}</h3>
                 <p className="text-[#64748b] text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
@@ -204,109 +190,256 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── OILIFY APP WAITLIST ── */}
-      <OilifyAppWaitlist />
+      {/* ── WHO IT'S FOR ─────────────────────────────────────────────────── */}
+      <section id="who-its-for" className="py-24 bg-[#0b1f3a] relative overflow-hidden scroll-mt-20">
+        <div className="absolute inset-0 industrial-grid opacity-40" />
+        <div className="absolute right-0 top-0 w-96 h-96 bg-[#f97316]/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
 
-      {/* ── CTA BANNER ── */}
-      <section className="py-20 bg-gradient-to-r from-[#0b1f3a] via-[#122a4d] to-[#0b1f3a]">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 mb-6">
-            <CheckCircle2 className="w-5 h-5 text-[#f97316]" />
-            <span className="text-[#f97316] text-sm font-semibold uppercase tracking-wider">Ready to transform your operations?</span>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="section-label justify-center mb-3">Who It&apos;s For</p>
+            <h2 className="text-4xl lg:text-5xl font-black text-white tracking-tight">
+              Built for everyone in<br />
+              <span className="text-[#f97316]">Guyana&apos;s petroleum sector.</span>
+            </h2>
+            <p className="text-[#94a3b8] mt-4 max-w-xl mx-auto">
+              Whether you&apos;re a local supplier, a skilled worker, or an international operator —
+              Local Content compliance affects you. Oilify AI has a path for each.
+            </p>
           </div>
-          <h2 className="text-3xl lg:text-5xl font-black text-white mb-5">
-            Start Your AI Journey<br />with Guyana&apos;s Best
-          </h2>
-          <p className="text-[#94a3b8] mb-8 max-w-xl mx-auto">
-            Schedule a no-obligation demo with our engineering team and see exactly how OilifyAI integrates with your existing operations.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-primary px-8 py-4 rounded-xl text-base inline-flex items-center justify-center gap-2">
-              Book a Free Demo <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link href="/services" className="btn-outline px-8 py-4 rounded-xl text-base inline-flex items-center justify-center gap-2">
-              View All Services
-            </Link>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {audiences.map(({ icon: Icon, title, subtitle, desc, tags }) => (
+              <div key={title} className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-[#f97316]/40 transition-all hover:bg-white/8 card-hover">
+                <div className="w-13 h-13 w-12 h-12 rounded-xl bg-[#f97316]/15 flex items-center justify-center mb-5">
+                  <Icon className="w-6 h-6 text-[#f97316]" />
+                </div>
+                <h3 className="text-white text-xl font-bold mb-1">{title}</h3>
+                <p className="text-[#f97316] text-xs font-semibold uppercase tracking-wider mb-4">{subtitle}</p>
+                <p className="text-[#94a3b8] text-sm leading-relaxed mb-6">{desc}</p>
+                <div className="flex flex-wrap gap-2">
+                  {tags.map((tag) => (
+                    <span key={tag} className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[#cbd5e1] text-xs font-medium">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
+      {/* ── FEATURES ─────────────────────────────────────────────────────── */}
+      <section id="features" className="py-24 bg-white scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="section-label justify-center mb-3">Features</p>
+            <h2 className="text-4xl lg:text-5xl font-black text-[#0b1f3a] tracking-tight">
+              Everything you need.<br />Nothing you don&apos;t.
+            </h2>
+            <p className="text-[#64748b] mt-4 max-w-xl mx-auto">
+              Oilify AI is purpose-built for the Local Content Act — not a generic compliance tool
+              retrofitted to Guyana. Every feature was designed around what Guyanese users actually need.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {features.map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="bg-[#f8fafc] rounded-2xl p-7 border border-[#e2e8f0] card-hover group">
+                <div className="w-11 h-11 rounded-xl bg-[#0b1f3a] flex items-center justify-center mb-5 group-hover:bg-[#f97316] transition-colors">
+                  <Icon className="w-5 h-5 text-[#f97316] group-hover:text-white transition-colors" />
+                </div>
+                <h3 className="font-bold text-[#0b1f3a] text-lg mb-2">{title}</h3>
+                <p className="text-[#64748b] text-sm leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── WAITLIST FORM ────────────────────────────────────────────────── */}
+      <WaitlistSection />
     </>
   );
 }
 
-function OilifyAppWaitlist() {
-  const [email, setEmail] = useState('');
+function WaitlistSection() {
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    userType: '',
+    message: '',
+  });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setError(false);
+  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (email) setSubmitted(true);
+    if (!form.name || !form.email || !form.userType) {
+      setError(true);
+      return;
+    }
+    setSubmitted(true);
   };
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      {/* Background accent */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#f8fafc] to-white" />
-      <div className="absolute right-0 top-0 w-[500px] h-[500px] bg-[#f97316]/5 rounded-full blur-3xl -translate-y-1/4 translate-x-1/4 pointer-events-none" />
+    <section
+      id="waitlist"
+      className="py-24 bg-[#f8fafc] relative overflow-hidden scroll-mt-20"
+    >
+      <div className="absolute inset-0 industrial-grid opacity-30" />
+      <div className="absolute left-0 top-0 w-[500px] h-[500px] bg-[#f97316]/5 rounded-full blur-3xl -translate-y-1/4 -translate-x-1/4 pointer-events-none" />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
-        {/* App icon badge */}
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-[#f97316] to-[#ea580c] shadow-lg shadow-orange-500/30 mb-6">
-          <Smartphone className="w-8 h-8 text-white" />
-        </div>
-
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f97316]/10 border border-[#f97316]/20 mb-5">
-          <Bell className="w-3 h-3 text-[#f97316]" />
-          <span className="text-[#f97316] text-xs font-bold uppercase tracking-widest">Coming Soon</span>
-        </div>
-
-        <h2 className="text-4xl lg:text-5xl font-black text-[#0b1f3a] tracking-tight mb-4">
-          The Oilify App is on<br />
-          <span className="text-[#f97316]">its way.</span>
-        </h2>
-
-        <p className="text-[#64748b] text-lg leading-relaxed max-w-xl mx-auto mb-10">
-          A mobile-first intelligence platform for Guyana&apos;s energy workforce — real-time field data,
-          AI alerts, compliance checklists, and logistics tracking in your pocket. Be first in line.
-        </p>
-
-        {/* Feature pills */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {['Field Monitoring', 'AI Alerts', 'Compliance Checklists', 'Logistics Tracking', 'Offline Mode'].map((f) => (
-            <span key={f} className="px-3 py-1.5 rounded-full bg-[#0b1f3a]/5 border border-[#0b1f3a]/10 text-[#0b1f3a] text-xs font-semibold">
-              {f}
-            </span>
-          ))}
-        </div>
-
-        {submitted ? (
-          <div className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-[#f97316]/10 border border-[#f97316]/25">
-            <CheckCircle2 className="w-5 h-5 text-[#f97316]" />
-            <div className="text-left">
-              <div className="text-[#0b1f3a] font-bold text-sm">You&apos;re on the list!</div>
-              <div className="text-[#64748b] text-xs">We&apos;ll notify you the moment the Oilify App launches.</div>
-            </div>
+      <div className="relative z-10 max-w-2xl mx-auto px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#f97316]/10 border border-[#f97316]/20 mb-5">
+            <Bell className="w-3.5 h-3.5 text-[#f97316]" />
+            <span className="text-[#f97316] text-xs font-bold uppercase tracking-widest">Early Access</span>
           </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your work email"
-              className="flex-1 px-5 py-3.5 rounded-xl border-2 border-[#e2e8f0] text-[#1e293b] text-sm placeholder-[#94a3b8] focus:border-[#f97316] transition-colors"
-            />
-            <button
-              type="submit"
-              className="btn-primary px-6 py-3.5 rounded-xl text-sm font-semibold whitespace-nowrap flex items-center justify-center gap-2"
-            >
-              Join Waitlist <ArrowRight className="w-4 h-4" />
-            </button>
-          </form>
-        )}
+          <h2 className="text-4xl lg:text-5xl font-black text-[#0b1f3a] tracking-tight mb-4">
+            Be first through<br />
+            <span className="text-[#f97316]">the door.</span>
+          </h2>
+          <p className="text-[#64748b] leading-relaxed">
+            Oilify AI is in early access. Join the waitlist and we&apos;ll reach out personally
+            to get you set up before the public launch.
+          </p>
+        </div>
 
-        <p className="text-[#94a3b8] text-xs mt-4">No spam. Early access for Guyanese energy professionals.</p>
+        {/* Form card */}
+        <div className="bg-white rounded-2xl border border-[#e2e8f0] shadow-sm p-8 lg:p-10">
+          {submitted ? (
+            <div className="text-center py-8">
+              <div className="w-16 h-16 rounded-full bg-[#f97316]/10 flex items-center justify-center mx-auto mb-5">
+                <CheckCircle2 className="w-8 h-8 text-[#f97316]" />
+              </div>
+              <h3 className="text-2xl font-black text-[#0b1f3a] mb-3">You&apos;re on the list!</h3>
+              <p className="text-[#64748b] mb-2">
+                Thanks, <span className="font-semibold text-[#0b1f3a]">{form.name}</span>. We&apos;ll be in touch within 48 hours.
+              </p>
+              <p className="text-[#94a3b8] text-sm">Your information will never be shared.</p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+              {/* Full Name */}
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-semibold text-[#374151] mb-1.5"
+                >
+                  Full Name <span className="text-[#f97316]">*</span>
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Your full name"
+                  className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] text-[#1e293b] text-sm placeholder-[#94a3b8] transition-colors"
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-semibold text-[#374151] mb-1.5"
+                >
+                  Email Address <span className="text-[#f97316]">*</span>
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="you@example.com"
+                  className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] text-[#1e293b] text-sm placeholder-[#94a3b8] transition-colors"
+                />
+              </div>
+
+              {/* User Type */}
+              <div>
+                <label
+                  htmlFor="userType"
+                  className="block text-sm font-semibold text-[#374151] mb-1.5"
+                >
+                  I am a... <span className="text-[#f97316]">*</span>
+                </label>
+                <div className="relative">
+                  <select
+                    id="userType"
+                    name="userType"
+                    required
+                    value={form.userType}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] text-[#1e293b] text-sm bg-white appearance-none cursor-pointer transition-colors"
+                  >
+                    <option value="">Select your type...</option>
+                    <option value="Business">Business</option>
+                    <option value="Individual">Individual</option>
+                    <option value="Corporation">Corporation</option>
+                  </select>
+                  <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94a3b8] pointer-events-none" />
+                </div>
+              </div>
+
+              {/* Optional Message */}
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-semibold text-[#374151] mb-1.5"
+                >
+                  Message{' '}
+                  <span className="text-[#94a3b8] font-normal">(optional)</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="Tell us a bit about your situation or what you need..."
+                  className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] text-[#1e293b] text-sm placeholder-[#94a3b8] transition-colors resize-y"
+                />
+              </div>
+
+              {/* Validation error */}
+              {error && (
+                <div className="flex items-center gap-2 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">
+                  <AlertCircle className="w-4 h-4 shrink-0" />
+                  Please fill in your full name, email, and user type.
+                </div>
+              )}
+
+              {/* Submit */}
+              <button
+                type="submit"
+                className="btn-primary w-full py-4 rounded-xl text-base font-semibold flex items-center justify-center gap-2 group"
+              >
+                Request Early Access
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+
+              {/* Trust line */}
+              <p className="text-center text-[#94a3b8] text-xs leading-relaxed">
+                We respond within 48 hours. Your information will never be shared.
+              </p>
+            </form>
+          )}
+        </div>
       </div>
     </section>
   );

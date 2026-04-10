@@ -5,14 +5,14 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "OilifyAI — Guyanese AI for the Energy Sector",
-    template: "%s | OilifyAI",
+    default: "Oilify AI — Local Content Compliance for Guyana's Petroleum Sector",
+    template: "%s | Oilify AI",
   },
   description:
-    "OilifyAI delivers AI-powered predictive logistics, training, and compliance solutions built in Guyana for the global energy industry.",
-  keywords: ["AI", "oil and gas", "Guyana", "predictive logistics", "energy", "machine learning"],
+    "Powering Local Content compliance across Guyana's petroleum sector.",
+  keywords: ["Local Content", "Guyana", "petroleum", "compliance", "AI", "oil and gas", "Stabroek Block"],
   openGraph: {
-    siteName: "OilifyAI",
+    siteName: "Oilify AI",
     locale: "en_GY",
     type: "website",
   },
