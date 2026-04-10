@@ -6,8 +6,9 @@ import {
   ArrowRight, CheckCircle2, ShieldCheck, Bell,
   FileText, Users, Building2, UserCheck,
   Smartphone, Search, AlertCircle, ClipboardList,
-  ChevronDown
+  ChevronDown, Mail
 } from 'lucide-react';
+import NewsletterForm from './components/NewsletterForm';
 
 // ─── HOW IT WORKS ──────────────────────────────────────────────────────────
 const steps = [
@@ -111,7 +112,7 @@ export default function HomePage() {
             </span>
             <span className="text-[#f97316]/50 text-xs font-bold">|</span>
             <span className="text-[#f97316] text-xs font-bold uppercase tracking-widest">
-              Diaspora Led
+              Petroleum AI Technologies
             </span>
           </div>
 
@@ -123,7 +124,7 @@ export default function HomePage() {
 
           {/* Tagline */}
           <p className="text-xl sm:text-2xl font-semibold text-white/80 mb-5 tracking-wide">
-            Local Content compliance. Automated.
+            Local Content Compliance. Automated.
           </p>
 
           {/* Subheadline */}
@@ -260,6 +261,26 @@ export default function HomePage() {
 
       {/* ── WAITLIST FORM ────────────────────────────────────────────────── */}
       <WaitlistSection />
+
+      {/* ── NEWSLETTER ───────────────────────────────────────────────────── */}
+      <section className="py-20 bg-[#0b1f3a] relative overflow-hidden">
+        <div className="absolute inset-0 industrial-grid opacity-40" />
+        <div className="absolute left-0 top-0 w-96 h-96 bg-[#f97316]/8 rounded-full blur-3xl -translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+        <div className="relative z-10 max-w-2xl mx-auto px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#f97316]/10 border border-[#f97316]/20 mb-5">
+            <Mail className="w-3.5 h-3.5 text-[#f97316]" />
+            <span className="text-[#f97316] text-xs font-bold uppercase tracking-widest">The Oilify AI Weekly</span>
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
+            Stay Ahead of the Block.
+          </h2>
+          <p className="text-[#94a3b8] text-lg leading-relaxed mb-10">
+            Get weekly updates on Local Content Act changes, procurement opportunities, compliance
+            tips, and petroleum sector news delivered straight to your inbox.
+          </p>
+          <NewsletterForm />
+        </div>
+      </section>
     </>
   );
 }
