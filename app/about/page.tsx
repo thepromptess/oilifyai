@@ -11,9 +11,9 @@ export default function AboutPage() {
     <div className="bg-white pt-32">
 
       {/* What */}
-      <section className="py-20 lg:py-28 border-b border-[#e2e8f0]">
+      <section className="py-10 lg:py-14 border-b border-[#e2e8f0]">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <h2 className="text-5xl lg:text-6xl font-black text-[#f97316] tracking-tight mb-8">
+          <h2 className="text-5xl lg:text-6xl font-black text-[#f97316] tracking-tight mb-6">
             What
           </h2>
           <p className="text-xl lg:text-2xl text-[#1e293b] leading-relaxed">
@@ -25,9 +25,9 @@ export default function AboutPage() {
       </section>
 
       {/* Why */}
-      <section className="py-20 lg:py-28 border-b border-[#e2e8f0]">
+      <section className="py-10 lg:py-14 border-b border-[#e2e8f0]">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <h2 className="text-5xl lg:text-6xl font-black text-[#f97316] tracking-tight mb-8">
+          <h2 className="text-5xl lg:text-6xl font-black text-[#f97316] tracking-tight mb-6">
             Why
           </h2>
           <p className="text-xl lg:text-2xl text-[#1e293b] leading-relaxed">
@@ -42,9 +42,9 @@ export default function AboutPage() {
       </section>
 
       {/* Outcome */}
-      <section className="py-20 lg:py-28">
+      <section className="py-10 lg:py-14">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <h2 className="text-5xl lg:text-6xl font-black text-[#f97316] tracking-tight mb-8">
+          <h2 className="text-5xl lg:text-6xl font-black text-[#f97316] tracking-tight mb-6">
             Outcome
           </h2>
           <p className="text-xl lg:text-2xl text-[#1e293b] leading-relaxed">
