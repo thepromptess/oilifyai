@@ -263,21 +263,41 @@ export default function HomePage() {
       <WaitlistSection />
 
       {/* ── NEWSLETTER ───────────────────────────────────────────────────── */}
-      <section className="py-20 bg-[#0b1f3a] relative overflow-hidden">
-        <div className="absolute inset-0 industrial-grid opacity-40" />
-        <div className="absolute left-0 top-0 w-96 h-96 bg-[#f97316]/8 rounded-full blur-3xl -translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+      <section className="py-20 bg-[#060e1a] relative overflow-hidden">
+        <div className="absolute inset-0 industrial-grid opacity-30" />
         <div className="relative z-10 max-w-2xl mx-auto px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#f97316]/10 border border-[#f97316]/20 mb-5">
-            <Mail className="w-3.5 h-3.5 text-[#f97316]" />
-            <span className="text-[#f97316] text-xs font-bold uppercase tracking-widest">The Oilify AI Weekly</span>
-          </div>
+
+          {/* Section label */}
+          <p className="section-label justify-center mb-5">Stay Ahead of the Block</p>
+
+          {/* Headline */}
           <h2 className="text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
-            Stay Ahead of the Block.
+            The Oilify AI Weekly
           </h2>
-          <p className="text-[#94a3b8] text-lg leading-relaxed mb-10">
-            Get weekly updates on Local Content Act changes, procurement opportunities, compliance
-            tips, and petroleum sector news delivered straight to your inbox.
+
+          {/* Subheadline */}
+          <p className="text-[#94a3b8] text-lg leading-relaxed mb-8">
+            Local Content intelligence for Guyana&apos;s petroleum sector. Delivered free to your inbox every week.
           </p>
+
+          {/* Feature pills */}
+          <div className="flex flex-wrap justify-center gap-2 mb-10">
+            {[
+              'Local Content Updates',
+              'Procurement Opportunities',
+              'Compliance Tips',
+              'Petroleum Sector News',
+            ].map((tag) => (
+              <span
+                key={tag}
+                className="px-4 py-2 rounded-full bg-[#0d2242] border border-white/10 text-white text-xs font-semibold tracking-wide"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* Form */}
           <NewsletterForm />
         </div>
       </section>

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Cpu, Globe, Mail, MapPin, ArrowUpRight } from 'lucide-react';
-import NewsletterForm from './NewsletterForm';
+import FooterNewsletter from './FooterNewsletter';
 
 const navLinks = [
   { label: 'How It Works', href: '/#how-it-works' },
@@ -18,25 +18,6 @@ export default function Footer() {
       <div className="h-0.5 bg-gradient-to-r from-[#009e60] via-[#fcd116] via-[#ce1126] via-black to-white" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-10">
-
-        {/* Newsletter band */}
-        <div className="mb-12 pb-12 border-b border-white/10">
-          <div className="flex flex-col lg:flex-row lg:items-center gap-8">
-            <div className="lg:max-w-sm shrink-0">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f97316]/10 border border-[#f97316]/20 mb-3">
-                <Mail className="w-3 h-3 text-[#f97316]" />
-                <span className="text-[#f97316] text-xs font-bold uppercase tracking-widest">The Oilify AI Weekly</span>
-              </div>
-              <h3 className="text-white text-2xl font-black tracking-tight mb-1">Stay Ahead of the Block.</h3>
-              <p className="text-[#64748b] text-sm leading-relaxed">
-                Weekly updates on Local Content Act changes, procurement opportunities, compliance tips, and petroleum sector news.
-              </p>
-            </div>
-            <div className="flex-1">
-              <NewsletterForm />
-            </div>
-          </div>
-        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
 
@@ -119,8 +100,13 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Newsletter — minimal single row */}
+        <div className="mt-12 pt-8 border-t border-white/10">
+          <FooterNewsletter />
+        </div>
+
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[#475569] text-sm">
             © 2026 Oilify AI. All rights reserved.
           </p>

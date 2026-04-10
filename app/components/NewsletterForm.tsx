@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
-export default function NewsletterForm() {
+export default function NewsletterForm({ buttonText = 'Subscribe Free' }: { buttonText?: string }) {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
@@ -31,15 +31,14 @@ export default function NewsletterForm() {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Your email address"
+          placeholder="Email Address"
           className="flex-1 px-4 py-3 rounded-xl border-2 border-[#e2e8f0] text-[#1e293b] text-sm placeholder-[#94a3b8] focus:border-[#f97316] transition-colors bg-white"
         />
         <button
           type="submit"
-          className="btn-primary px-5 py-3 rounded-xl text-sm font-semibold whitespace-nowrap flex items-center justify-center gap-2"
+          className="btn-primary px-6 py-3 rounded-xl text-sm font-semibold whitespace-nowrap"
         >
-          Subscribe to The Oilify AI Weekly
-          <ArrowRight className="w-4 h-4" />
+          {buttonText}
         </button>
       </div>
       <p className="text-[#94a3b8] text-xs">Free. No spam. Unsubscribe anytime.</p>
