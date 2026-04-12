@@ -8,7 +8,7 @@ import {
   Smartphone, Search, AlertCircle, ClipboardList,
   ChevronDown, Mail
 } from 'lucide-react';
-import NewsletterForm from './components/NewsletterForm';
+import NewsletterForm from '../components/NewsletterForm';
 
 // ─── HOW IT WORKS ──────────────────────────────────────────────────────────
 const steps = [
