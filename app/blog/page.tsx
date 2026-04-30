@@ -17,6 +17,22 @@ const posts = [
     excerpt:
       'If you are a business owner, investor, or professional operating anywhere in Guyana right now, there is a piece of legislation you need to understand. Not because it might affect you someday. Because it already is.',
   },
+  {
+    slug: 'local-content-certificate-how-to-get-the-business',
+    title: 'You Can Get the Local Content Certificate. Here Is How You Actually Get the Business.',
+    date: 'December 31, 2025',
+    issue: 'Local Content, SMEs, Guyana Business · 7 min read',
+    excerpt:
+      'There is a moment in a developing economy when the rules shift from being about access to being about performance. Guyana has reached that moment. The Local Content Act opened the door. Now the question is whether Guyanese businesses are ready to walk through it.',
+  },
+  {
+    slug: 'local-content-act-being-rebuilt',
+    title: "Guyana's Local Content Act Is Being Rebuilt From the Inside Out",
+    date: 'December 31, 2025',
+    issue: 'Policy, Local Content Act, Guyana Energy · 8 min read',
+    excerpt:
+      "When Guyana enacted its Local Content Act, it joined a relatively small group of oil-producing nations that chose to legislate local participation rather than simply encourage it. Most countries that discover oil end up with citizens who are bystanders in their own petroleum industry. Guyana made a different choice.",
+  },
 ];
 
 export default function BlogPage() {
